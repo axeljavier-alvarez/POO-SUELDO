@@ -1,0 +1,72 @@
+.logointecap {
+    width: 200px;
+    height: 100px;
+}
+
+
+.logoface {
+    width: 100px;
+    margin-right: 5px;
+
+}
+
+.logotwitter {
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+}
+
+.logoinsta {
+    width: 100px;
+    height: 100px;
+    margin-right: 8px;
+
+}
+
+.logoyutu{
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+
+}
+
+.logolinkedin {
+    width: 100px;
+    height: 100px;
+}
+
+.navPrincipal{
+    background-color: gray;
+}
+
+.letraNav{
+    color: white;
+
+}
+
+nav{
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.sectionmision {
+    background-color: white;
+    width: 70%;
+    border: 2px solid #000;
+    font-size: 15px;
+    max-width: 100%;
+}
+
+.sectionvision {
+    background-color: white;
+    width: 70%;
+    border: 2px solid #000;
+    font-size: 15px;
+    max-width: 100%;
+
+}
+
+iframe{
+    max-width: 100%;
+}
