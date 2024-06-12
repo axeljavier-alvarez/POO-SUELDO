@@ -44,9 +44,9 @@ var SueldoLiquido = /** @class */ (function () {
     /* total ganado*/
     SueldoLiquido.prototype.asignarTotalGanado = function () {
         this.totalGanado = this.salario + this.bonificacion + this.comision;
-        return "El sueldo liquido es de: " + this.totalGanado.toFixed(2) + "\n";
+        return "El total ganado es de: " + this.totalGanado.toFixed(2) + "\n";
     };
-    /* total iggs */
+    /* total iggs numero*/
     SueldoLiquido.prototype.asignarTotalIggs = function () {
         this.totalIggs = this.salario * 0.0483;
         return parseFloat(this.totalIggs.toFixed(2));
@@ -60,7 +60,7 @@ var SueldoLiquido = /** @class */ (function () {
 }());
 // DONDE SE VERAN LOS RESULTADOS
 var sueldoLiquido = new SueldoLiquido();
-var divSueldoLiquido = document.getElementById('resultadoIngreso');
+var divTotalGanado = document.getElementById('resultadoIngreso');
 /* iggs*/
 var divIggsCalculado = document.getElementById('iggs');
 var divEgresos = document.getElementById('resultadoEgreso');
@@ -75,10 +75,11 @@ function obtenerDatos() {
     sueldoLiquido.asignarPrestamos(parseFloat(document.getElementById("txtPrestamo").value));
 }
 // calcular el sueldo liquido
-function calcularSueldoLiquido() {
+function calcularTotalGanado() {
     obtenerDatos();
-    divSueldoLiquido.textContent = sueldoLiquido.asignarTotalGanado();
+    divTotalGanado.textContent = sueldoLiquido.asignarTotalGanado();
 }
+/* convertir a tostring */
 function calcularIggs() {
     obtenerDatos();
     divIggsCalculado.value = (sueldoLiquido.asignarTotalIggs()).toString();
