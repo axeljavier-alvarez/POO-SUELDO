@@ -1,8 +1,27 @@
+body{
+    background-image: url('../img/large-triangles.svg');
+}
+
+*{
+    text-decoration: none;
+}
+
 .logointecap {
     width: 200px;
     height: 100px;
-}
+    border: none;
 
+}
+.nav-list li a {
+    color: white;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 25px;
+}
 
 .logoface {
     width: 100px;
@@ -69,4 +88,47 @@ nav{
 
 iframe{
     max-width: 100%;
+}
+
+.articulo4{
+    grid-area: texto;
+    background-color: white;
+    margin: auto;
+    width: 87%;
+    border: 2px solid #000;
+    font-size: 15px;
+}
+
+.articulo5{
+    width: 250px;
+    border: 0px;
+    border-spacing: 0px;
+    margin: auto;
+}
+
+.logointecap2{
+    width: 95%;
+    height: 250px;
+    margin-bottom: -3px;
+}
+
+#ingresos{
+    width: 70%;
+    border-radius: 20px 20px 20px 20px;
+    /* background-color: black; */
+    /* color: white; */
+    text-align: center;
+    border-collapse: collapse;
+    background-color: #74B9DA;
+}
+
+#egresos{
+    width: 70%;
+    height: 400px;
+    border-radius: 20px 20px 20px 20px;
+    /* background-color: black; */
+    /* color: white; */
+    text-align: center;
+    border-collapse: collapse;
+    background-color: #74B9DA;
 }
