@@ -23,6 +23,8 @@ var SueldoLiquido = /** @class */ (function () {
         this.ahorro = 0;
         this.prestamos = 0;
         this.totalEgresos = 0;
+        // sueldo liquido
+        this.totalSueldoLiquido = 0;
     }
     // sueldo liquido
     SueldoLiquido.prototype.asignarSalario = function (valor) {
@@ -44,7 +46,7 @@ var SueldoLiquido = /** @class */ (function () {
     /* total ganado*/
     SueldoLiquido.prototype.asignarTotalGanado = function () {
         this.totalGanado = this.salario + this.bonificacion + this.comision;
-        return "El total ganado es de: " + this.totalGanado.toFixed(2) + "\n";
+        return parseFloat(this.totalGanado.toFixed(2));
     };
     /* total iggs numero*/
     SueldoLiquido.prototype.asignarTotalIggs = function () {
@@ -54,7 +56,12 @@ var SueldoLiquido = /** @class */ (function () {
     /* total egresos */
     SueldoLiquido.prototype.asignarTotalEgresos = function () {
         this.totalEgresos = this.ahorro + this.prestamos - this.asignarTotalIggs();
-        return "El descuento es de: " + this.totalEgresos.toFixed(2) + "\n";
+        return parseFloat(this.totalEgresos.toFixed(2));
+    };
+    /* total sueldo*/
+    SueldoLiquido.prototype.asignarSueldoLiquido = function () {
+        this.totalSueldoLiquido = this.asignarTotalGanado() - this.asignarTotalEgresos();
+        return "El sueldo liquido es " + this.totalSueldoLiquido.toFixed(2);
     };
     return SueldoLiquido;
 }());
@@ -64,6 +71,7 @@ var divTotalGanado = document.getElementById('resultadoIngreso');
 /* iggs*/
 var divIggsCalculado = document.getElementById('iggs');
 var divEgresos = document.getElementById('resultadoEgreso');
+var divTotalSueldoLiquido = document.getElementById('resultadoFinal');
 // obtener Datos del sueldo liquido
 function obtenerDatos() {
     /* datos de ingresos*/
@@ -77,14 +85,14 @@ function obtenerDatos() {
 // calcular el sueldo liquido
 function calcularTotalGanado() {
     obtenerDatos();
-    divTotalGanado.textContent = sueldoLiquido.asignarTotalGanado();
-}
-/* convertir a tostring */
-function calcularIggs() {
-    obtenerDatos();
+    divTotalGanado.textContent = (sueldoLiquido.asignarTotalGanado()).toString();
     divIggsCalculado.value = (sueldoLiquido.asignarTotalIggs()).toString();
 }
 function calcularEgresos() {
     obtenerDatos();
-    divEgresos.textContent = sueldoLiquido.asignarTotalEgresos();
+    divEgresos.textContent = (sueldoLiquido.asignarTotalEgresos()).toString();
+}
+function calcularSueldoLiquido() {
+    obtenerDatos();
+    divTotalSueldoLiquido.textContent = (sueldoLiquido.asignarSueldoLiquido());
 }

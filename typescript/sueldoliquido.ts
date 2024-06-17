@@ -50,7 +50,8 @@ class SueldoLiquido {
     /* total ganado*/
     public asignarTotalGanado() {
         this.totalGanado = this.salario + this.bonificacion + this.comision;
-        return "El total ganado es de: " + this.totalGanado.toFixed(2) + "\n";
+        return parseFloat(this.totalGanado.toFixed(2));
+
     }
     /* total iggs numero*/
     public asignarTotalIggs() : number{
@@ -61,12 +62,14 @@ class SueldoLiquido {
     /* total egresos */
     public asignarTotalEgresos(){
         this.totalEgresos = this.ahorro + this.prestamos - this.asignarTotalIggs();
-        return "El descuento es de: "+ this.totalEgresos.toFixed(2) + "\n";
+        return parseFloat(this.totalEgresos.toFixed(2));
     }
 
     /* total sueldo*/
-
-    /* CALCULAR SUELDO LIQUIDO */
+    public asignarSueldoLiquido(){
+        this.totalSueldoLiquido = this.asignarTotalGanado() - this.asignarTotalEgresos();
+        return "El sueldo liquido es " + this.totalSueldoLiquido.toFixed(2);
+    }
 }
 
 // DONDE SE VERAN LOS RESULTADOS
@@ -77,6 +80,7 @@ let divIggsCalculado = document.getElementById('iggs') as HTMLInputElement;
 
 let divEgresos = document.getElementById('resultadoEgreso') as HTMLParagraphElement;
 
+let divTotalSueldoLiquido = document.getElementById('resultadoFinal') as HTMLParagraphElement;
 
 // obtener Datos del sueldo liquido
 function obtenerDatos() : void {
@@ -97,17 +101,17 @@ function obtenerDatos() : void {
 // calcular el sueldo liquido
 function calcularTotalGanado() : void{
     obtenerDatos();
-    divTotalGanado.textContent = sueldoLiquido.asignarTotalGanado();
-}
-
-/* convertir a tostring */
-function calcularIggs() : void {
-    obtenerDatos();
+    divTotalGanado.textContent = (sueldoLiquido.asignarTotalGanado()).toString();
     divIggsCalculado.value = (sueldoLiquido.asignarTotalIggs()).toString();
 }
 
 function calcularEgresos(): void {
     obtenerDatos();
-    divEgresos.textContent = sueldoLiquido.asignarTotalEgresos();
+    divEgresos.textContent = (sueldoLiquido.asignarTotalEgresos()).toString();
+
 }
 
+function calcularSueldoLiquido() : void {
+    obtenerDatos();
+    divTotalSueldoLiquido.textContent = (sueldoLiquido.asignarSueldoLiquido());
+}

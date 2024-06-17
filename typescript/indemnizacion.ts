@@ -6,29 +6,23 @@ var salarioPendiente;
 var cobrosPendientes;
 var bono14;
 var aguinaldo;
-
 var operacion;*/
-
 class Indemnizacion {
     private sueldo: number = 0;
     private añosPendientes: number = 0;
     private mesesPendientes: number = 0;
     private salariosPendientes: number = 0;
     private cobrosPendientes: number = 0;
-
     private bono14: number = 0;
     private aguinaldo: number = 0;
     private indemnizacion: number = 0;
     /* variables que necesito xd*/
-
     public asignarSueldo(valor: number){
         this.sueldo = valor;
     }
-
     public asignarAñosPendientes(valor: number){
         this.añosPendientes = valor;
     }
-
     public asignarMesesPendientes(valor: number){
         this.mesesPendientes = valor;
     }
@@ -39,14 +33,11 @@ class Indemnizacion {
     public asignarCobrosPendientes(valor: number){
         this.cobrosPendientes = valor;
     }
-
     // BONO 14
     public calcularBono14(){
         this.bono14 = (this.sueldo/12) * this.mesesPendientes;
         return parseFloat(this.bono14.toFixed(2));
-
     }
-
     // AGUINALDO
     public calcularAguinaldo(){
         this.aguinaldo = (this.sueldo/12) * this.mesesPendientes;
@@ -57,10 +48,8 @@ class Indemnizacion {
     public calcularIndemnizacion(){
         this.indemnizacion = this.sueldo+this.añosPendientes+this.mesesPendientes+this.salariosPendientes+this.cobrosPendientes+this.calcularBono14()+this.calcularAguinaldo();
         return "La indemnizaciones de : " + this.indemnizacion.toFixed(2) + "\n";
-
     }
 }
-
 /* VARIABLES GENERALES Y DONDE SE MOSTRARA LA RESPUESTA*/
 const indemnizacion = new Indemnizacion();
 // calcular el bono 14
