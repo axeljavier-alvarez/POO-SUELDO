@@ -40,10 +40,7 @@
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/800px-Instagram_logo_2022.svg.png"
                                 class="logoinsta">
                         </a>
-                        <a href="https://twitter.com/uefpem?lang=es" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg" alt=""
-                                class="logotwitter">
-                        </a>
+                       
                         <a href="https://www.facebook.com/EFPEMUSAC.oficial/?locale=es_LA" target="_blank"><img
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/2023_Facebook_icon.svg/2048px-2023_Facebook_icon.svg.png"
                                 alt="" class="logoface"></a>
@@ -64,7 +61,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link letraNav"
-                            href="index.html">Inicio&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                            href="../index.html">Inicio&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
                     <li class="nav-item"><a class="nav-link letraNav" href="./sueldoliquido.html">Sueldo 
                             Liquido&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
                     <li class="nav-item"><a class="nav-link letraNav" href="./indemnizacion.html">Indemnización</a>
@@ -82,19 +79,22 @@
                 <h5>INGRESOS</h5>
                 <br>
                 <div class="mb-3">
+                    <label for="exampleInputEmail1">Salario</label>
                     <input type="number" class="form-control" id="txtSalario" placeholder="Ingrese el salario"
                         autocomplete="off">
                 </div>
                 <div class="mb-3">
+                    <label for="exampleInputEmail1">Bonificación</label>
                     <input type="number" class="form-control" id="txtBonificacion" placeholder="Ingrese la bonificacion"
                         autocomplete="off">
                 </div>
                 <div class="mb-3">
+                    <label for="exampleInputEmail1">Comisión</label>
                     <input type="number" class="form-control" id="txtComision" placeholder="Ingrese la comision"
                         autocomplete="off">
                 </div>
                 <div class="mb-3">
-                    <button type="button" onclick="calcularTotalGanado()" class="btn btn-primary form-control">Total
+                    <button type="button" onclick="calcularTotalGanado()" class="btn btn-warning form-control">
                         Total ganado</button>
                 </div>
                 <div class="mb-3">
@@ -109,17 +109,20 @@
             <h5>EGRESOS</h5>
             <br>
             <div class="mb-3">
+                <label for="exampleInputEmail1">Salario</label>
                 <input type="number" class="form-control" id="txtAhorro" placeholder="Ingrese el salario"
                     autocomplete="off">
             </div>
+            <label for="exampleInputEmail1">IGGS</label>
             <input type="text" class="form-control" id="iggs" readonly>
             <div class="mb-3">
+                <label for="exampleInputEmail1">Comisión</label>
                 <input type="number" class="form-control" id="txtPrestamo" placeholder="Ingrese la bonificacion"
                     autocomplete="off">
             </div>
 
             <div class="mb-3">
-                <button type="button" onclick="calcularEgresos()" class="btn btn-primary form-control">
+                <button type="button" onclick="calcularEgresos()" class="btn btn-warning form-control">
                     Total Descuento</button>
             </div>
 
@@ -136,7 +139,7 @@
     <br>
     <br>
     <center>
-        <button type="button" onclick="calcularSueldoLiquido()" class="btn btn-warning">
+        <button type="button" onclick="calcularSueldoLiquido()" class="btn btn-light">
             Obtener Sueldo Liquido
         </button>
         <p id="resultadoFinal">
