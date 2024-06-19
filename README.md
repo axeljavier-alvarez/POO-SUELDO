@@ -10,4 +10,4 @@
 | 2023-023346 | Axel Alvarez |
 
 ### Sitio web 
-https://axeljavier-alvarez.github.io/INTRODUCCION-POO-TYPESCRIPT/
+https://axeljavier-alvarez.github.io/POO-SUELDO/
